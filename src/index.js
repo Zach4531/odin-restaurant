@@ -12,6 +12,8 @@ const pages = {
   menu: Menu(),
 };
 
+content.appendChild(pages['home']);
+
 buttons.forEach((button) => {
   button.addEventListener('click', ({ currentTarget }) => {
     const page = currentTarget.dataset.tab;

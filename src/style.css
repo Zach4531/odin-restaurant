@@ -9,13 +9,19 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+button,
+a {
+  cursor: pointer;
+}
+
 * {
   padding: 0;
   margin: 0;
 }
 
 .container {
-  max-width: 1500px;
+  max-width: 1080px;
+  margin: auto;
 }
 
 body {
@@ -34,6 +40,14 @@ header {
   font-size: 1.6rem;
   color: rgb(92, 69, 26);
   z-index: 2;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgb(216, 185, 155);
+  font-weight: bold;
+  color: rgb(92, 69, 26);
 }
 
 .icon h1 {
@@ -91,20 +105,16 @@ nav button::after {
 .home {
   animation: load;
   animation-duration: 500ms;
-  height: calc(100vh - 75px);
-  background: linear-gradient(rgba(34, 25, 15, 0.795), rgba(34, 25, 15, 0.822)),
-    url('./header3.jpg') center center;
-  background-size: cover;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
 }
 
 .home h1 {
   font-size: 3rem;
   font-weight: bold;
+  font-family: 'Shantell Sans' !important;
+}
+
+.home h2 {
+  font-size: 2rem;
 }
 
 .home img {
@@ -116,17 +126,59 @@ nav button::after {
   display: grid;
   align-content: center;
   justify-content: center;
+  height: calc(100vh - 75px);
+  background: linear-gradient(rgba(34, 25, 15, 0.795), rgba(34, 25, 15, 0.822)),
+    url('./header3.jpg') center center;
+  background-size: cover;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
   gap: 1rem;
 }
 
 .home-button {
   width: fit-content;
   margin: auto;
-  padding: 1rem 2rem;
+  padding: 1.25rem 2.25rem;
   font-size: 1rem;
   font-weight: bold;
   background-color: rgb(92, 69, 26);
   border-radius: 0.255rem;
   border: 0;
   color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.home-button:hover {
+  background-color: rgb(119, 89, 33);
+}
+
+.section-one-img {
+  background: url('./header2.jpg') center center;
+  background-size: cover;
+  width: 500px;
+  height: 300px;
+  border-radius: 0.5rem;
+}
+
+.section-one {
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.section-one h1 {
+  grid-column: 1/3;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.section-one p {
+  margin-top: 1rem;
+  line-height: 2rem;
+  font-size: 1.1rem;
 }

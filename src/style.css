@@ -8,6 +8,21 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Shantell Sans' !important;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 75px 1fr 75px;
+}
+
+html,
+body {
+  height: 100%;
+}
 
 button,
 a {
@@ -24,18 +39,13 @@ a {
   margin: auto;
 }
 
-body {
-  padding-top: 75px;
-}
-
 header {
   display: grid;
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
   padding: 0rem 2rem;
-  height: 75px;
   background-color: rgb(216, 185, 155);
   font-size: 1.6rem;
   color: rgb(92, 69, 26);
@@ -43,11 +53,13 @@ header {
 }
 
 footer {
-  text-align: center;
-  padding: 2rem;
+  padding: 0rem 2rem;
   background-color: rgb(216, 185, 155);
   font-weight: bold;
   color: rgb(92, 69, 26);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon h1 {
@@ -102,7 +114,9 @@ nav button::after {
   }
 }
 
-.home {
+.home,
+.menu,
+.about {
   animation: load;
   animation-duration: 500ms;
 }
@@ -181,4 +195,64 @@ nav button::after {
   margin-top: 1rem;
   line-height: 2rem;
   font-size: 1.1rem;
+}
+
+.menu {
+  padding: 3rem 0rem;
+}
+
+.menu-heading {
+  text-align: center;
+}
+
+.drink-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  width: 900px;
+  justify-content: center;
+  margin: auto;
+  gap: 2rem;
+}
+
+.menu-item {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tab-menu {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.tab-menu button {
+  background: transparent;
+  border: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.tab-menu button:hover {
+  color: rgb(119, 89, 33);
+}
+
+.tab-menu button:hover::after {
+  opacity: 1;
+}
+
+.tab-menu button::after {
+  content: ' ';
+  opacity: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgb(119, 89, 33);
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  transition: all 0.2s ease;
 }

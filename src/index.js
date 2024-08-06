@@ -12,7 +12,7 @@ const pages = {
   menu: Menu(),
 };
 
-content.appendChild(pages['menu']);
+content.appendChild(pages['home']);
 
 buttons.forEach((button) => {
   button.addEventListener('click', ({ currentTarget }) => {

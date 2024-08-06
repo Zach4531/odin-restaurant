@@ -1,24 +1,26 @@
 import Icon from './coffee-bean-icon.svg';
+import { makeElement } from './element';
 
 export function Home() {
-  const container = document.createElement('div');
-  container.classList.add('home');
+  const container = makeElement('div').addClass('home').create();
 
   const logo = new Image();
   logo.src = Icon;
 
-  const headlineContainer = document.createElement('div');
-  headlineContainer.classList.add('home-heading');
+  const headlineContainer = makeElement('div')
+    .addClass('home-heading')
+    .create();
 
-  const headline = document.createElement('h1');
-  headline.textContent = 'TheBean';
+  const headline = makeElement('h1').addText('TheBean').create();
 
-  const subHeadline = document.createElement('h2');
-  subHeadline.textContent = 'Awaken Your Senses with Every Sip';
+  const subHeadline = makeElement('h2')
+    .addText('Awaken Your Senses with Every Sip')
+    .create();
 
-  const menuButton = document.createElement('button');
-  menuButton.classList.add('home-button');
-  menuButton.textContent = 'View Our Menu';
+  const menuButton = makeElement('button')
+    .addClass('home-button')
+    .addText('View Our Menu')
+    .create();
 
   headlineContainer.appendChild(logo);
   headlineContainer.appendChild(headline);
@@ -28,20 +30,23 @@ export function Home() {
   const sectionContainer = document.createElement('div');
   sectionContainer.classList.add('section-one', 'container');
 
-  const sectionMainHeading = document.createElement('h1');
-  sectionMainHeading.textContent = 'Who We Are';
+  const sectionMainHeading = makeElement('h1').addText('Who We Are').create();
 
-  const sectionImageContainer = document.createElement('div');
-  sectionImageContainer.classList.add('section-one-img');
+  const sectionImageContainer = makeElement('div')
+    .addClass('section-one-img')
+    .create();
 
-  const sectionContentContainer = document.createElement('div');
+  const sectionContentContainer = makeElement('div').create();
 
-  const sectionHeadingOne = document.createElement('h2');
-  sectionHeadingOne.textContent = 'Brewed to Perfection, Just for You';
+  const sectionHeadingOne = makeElement('h2')
+    .addText('Brewed to Perfection, Just for You')
+    .create();
 
-  const sectionHeadingText = document.createElement('p');
-  sectionHeadingText.textContent =
-    'At our coffee shop, we take pride in delivering the perfect cup of coffee tailored to your taste. Our expert baristas meticulously select and roast the finest beans, ensuring every sip is a testament to quality and craftsmanship. Whether you prefer a bold espresso or a smooth latte, each beverage is brewed to perfection just for you. Step into our cozy atmosphere, savor the rich flavors, and let us make your coffee experience truly exceptional.';
+  const sectionHeadingText = makeElement('p')
+    .addText(
+      'At our coffee shop, we take pride in delivering the perfect cup of coffee tailored to your taste. Our expert baristas meticulously select and roast the finest beans, ensuring every sip is a testament to quality and craftsmanship. Whether you prefer a bold espresso or a smooth latte, each beverage is brewed to perfection just for you. Step into our cozy atmosphere, savor the rich flavors, and let us make your coffee experience truly exceptional.'
+    )
+    .create();
 
   sectionContentContainer.appendChild(sectionHeadingOne);
   sectionContentContainer.appendChild(sectionHeadingText);

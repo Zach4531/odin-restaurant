@@ -14,6 +14,13 @@ export function Menu() {
 
   for (const category in coffeeMenu) {
     const tabButton = makeElement('button').addText(category).create();
+    tabButton.addEventListener('click', (e) => {
+      menuContainer.innerHTML = '';
+      for (let item in coffeeMenu[category]) {
+        let current = coffeeMenu[category][item];
+        createMenuItem(current.name, current.price, current.description);
+      }
+    });
     tabMenu.appendChild(tabButton);
   }
 

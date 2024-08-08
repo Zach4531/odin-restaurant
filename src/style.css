@@ -231,13 +231,14 @@ nav button::after {
 
 .menu-item-description {
   grid-column: 1/3;
+  line-height: 1.5rem;
 }
 
 .tab-menu {
   display: flex;
   gap: 2rem;
   padding: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   justify-content: center;
 }
 
@@ -250,11 +251,13 @@ nav button::after {
   position: relative;
 }
 
-.tab-menu button:hover {
+.tab-menu button:hover,
+.tab-menu button.active {
   color: rgb(119, 89, 33);
 }
 
-.tab-menu button:hover::after {
+.tab-menu button:hover::after,
+.tab-menu button.active::after {
   opacity: 1;
 }
 

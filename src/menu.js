@@ -14,12 +14,9 @@ export function Menu() {
 
   for (const category in coffeeMenu) {
     const tabButton = makeElement('button').addText(category).create();
-    tabButton.addEventListener('click', (e) => {
-      menuContainer.innerHTML = '';
-      for (let item in coffeeMenu[category]) {
-        let current = coffeeMenu[category][item];
-        createMenuItem(current.name, current.price, current.description);
-      }
+    tabButton.addEventListener('click', ({ currentTarget }) => {
+      chooseMenu(category);
+      setActive(currentTarget);
     });
     tabMenu.appendChild(tabButton);
   }
@@ -48,15 +45,26 @@ export function Menu() {
     menuContainer.appendChild(menuItem);
   }
 
-  for (const category in coffeeMenu) {
+  function chooseMenu(category) {
+    menuContainer.innerHTML = '';
     coffeeMenu[category].forEach(({ name, price, description }) => {
       createMenuItem(name, price, description);
     });
+  }
+  function setActive(event) {
+    let activeItem = document.querySelector('.active');
+    if (activeItem) {
+      activeItem.classList.remove('active');
+    }
+    event.classList.add('active');
   }
 
   container.appendChild(mainHeading);
   container.appendChild(tabMenu);
   container.appendChild(menuContainer);
+
+  chooseMenu(Object.keys(coffeeMenu)[0]);
+  tabMenu.querySelector('button').classList.add('active');
 
   return container;
 }
